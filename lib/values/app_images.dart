@@ -6,4 +6,5 @@ class AppImages {
   static final String PhuQuoc = imagePath + 'PhuQuoc.png';
   static final String Seoul = imagePath + 'Seoul.png';
   static final String Singapore = imagePath + 'Singapore.png';
+  static final String background_ticket = imagePath + 'backgrond_ticket.png';
 }
