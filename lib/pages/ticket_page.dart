@@ -86,13 +86,12 @@ class _ticketPageState extends State<ticketPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: AppColors.primaryColor,
-                    borderRadius:
-                        BorderRadius.circular(15), // Đặt bán kính bo tròn ở đây
+                    borderRadius: BorderRadius.circular(15),
                   ),
                   margin: EdgeInsets.only(bottom: 150),
                   height: 60,

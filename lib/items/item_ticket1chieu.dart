@@ -13,7 +13,7 @@ class _itemTicketState extends State<itemTicket> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.primaryColor,
@@ -24,7 +24,9 @@ class _itemTicketState extends State<itemTicket> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            itemBookingflight(),
+            Container(
+                margin: EdgeInsets.only(bottom: 10),
+                child: itemBookingflight()),
             itemBookingflight(),
             Text(
               'Hàng khách',
@@ -33,44 +35,53 @@ class _itemTicketState extends State<itemTicket> {
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF71AFE5)),
             ),
-            Row(
-              children: [
-                Text(
-                  'Người lớn',
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                Spacer(),
-                item_numberGuest()
-              ],
+            Container(
+              margin: EdgeInsets.only(top: 5),
+              child: Row(
+                children: [
+                  Text(
+                    'Người lớn',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  Spacer(),
+                  item_numberGuest()
+                ],
+              ),
             ),
-            Row(
-              children: [
-                Text(
-                  'Trẻ em(2-12 tuổi)',
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                Spacer(),
-                item_numberGuest()
-              ],
+            Container(
+              margin: EdgeInsets.only(top: 15),
+              child: Row(
+                children: [
+                  Text(
+                    'Trẻ em(2-12 tuổi)',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  Spacer(),
+                  item_numberGuest()
+                ],
+              ),
             ),
-            Row(
-              children: [
-                Text(
-                  'Trẻ em(Dưới 2 tuổi)',
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                Spacer(),
-                item_numberGuest()
-              ],
+            Container(
+              margin: EdgeInsets.only(top: 15),
+              child: Row(
+                children: [
+                  Text(
+                    'Trẻ em(Dưới 2 tuổi)',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  Spacer(),
+                  item_numberGuest()
+                ],
+              ),
             )
           ],
         ),
