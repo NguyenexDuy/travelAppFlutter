@@ -77,7 +77,11 @@ class _ticketPageState extends State<ticketPage> {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: TabBarView(
-                            children: [itemTicket(), itemTicketKhuHoi()],
+                            children: [
+                              itemTicket(),
+                              itemTicketKhuHoi(),
+                              itemTicketKhuHoi()
+                            ],
                           ),
                         ),
                       ),

@@ -10,6 +10,9 @@ class itemTicket extends StatefulWidget {
 }
 
 class _itemTicketState extends State<itemTicket> {
+  int _countNguoiLon = 0;
+  int _countTreEm12Tuoi = 0;
+  int _countTreEm2Tuoi = 0;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,7 +29,13 @@ class _itemTicketState extends State<itemTicket> {
           children: [
             Container(
                 margin: EdgeInsets.only(bottom: 10),
-                child: itemBookingflight()),
+                child: Row(
+                  children: [
+                    itemBookingflight(),
+                    Spacer(),
+                    Container(child: Image.asset(AppAssets.ngayDi))
+                  ],
+                )),
             itemBookingflight(),
             Text(
               'Hàng khách',
@@ -47,7 +56,36 @@ class _itemTicketState extends State<itemTicket> {
                         color: Colors.white),
                   ),
                   Spacer(),
-                  item_numberGuest()
+                  Row(
+                    children: [
+                      Container(
+                          margin: EdgeInsets.only(right: 10),
+                          child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  _countNguoiLon = _countNguoiLon > 0
+                                      ? _countNguoiLon - 1
+                                      : _countNguoiLon;
+                                });
+                              },
+                              child: Image.asset(AppAssets.minus))),
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        child: Text(_countNguoiLon.toString().padLeft(2, '0'),
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
+                      ),
+                      InkWell(
+                          onTap: () {
+                            setState(() {
+                              _countNguoiLon++;
+                            });
+                          },
+                          child: Image.asset(AppAssets.plus))
+                    ],
+                  )
                 ],
               ),
             ),
@@ -63,7 +101,37 @@ class _itemTicketState extends State<itemTicket> {
                         color: Colors.white),
                   ),
                   Spacer(),
-                  item_numberGuest()
+                  Row(
+                    children: [
+                      Container(
+                          margin: EdgeInsets.only(right: 10),
+                          child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  _countTreEm12Tuoi = _countTreEm12Tuoi > 0
+                                      ? _countTreEm12Tuoi - 1
+                                      : _countTreEm12Tuoi;
+                                });
+                              },
+                              child: Image.asset(AppAssets.minus))),
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        child: Text(
+                            _countTreEm12Tuoi.toString().padLeft(2, '0'),
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
+                      ),
+                      InkWell(
+                          onTap: () {
+                            setState(() {
+                              _countTreEm12Tuoi++;
+                            });
+                          },
+                          child: Image.asset(AppAssets.plus))
+                    ],
+                  )
                 ],
               ),
             ),
@@ -79,27 +147,42 @@ class _itemTicketState extends State<itemTicket> {
                         color: Colors.white),
                   ),
                   Spacer(),
-                  item_numberGuest()
+                  Row(
+                    children: [
+                      Container(
+                          margin: EdgeInsets.only(right: 10),
+                          child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  _countTreEm2Tuoi = _countTreEm2Tuoi > 0
+                                      ? _countTreEm2Tuoi - 1
+                                      : _countTreEm2Tuoi;
+                                });
+                              },
+                              child: Image.asset(AppAssets.minus))),
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        child: Text(_countTreEm2Tuoi.toString().padLeft(2, '0'),
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
+                      ),
+                      InkWell(
+                          onTap: () {
+                            setState(() {
+                              _countTreEm2Tuoi++;
+                            });
+                          },
+                          child: Image.asset(AppAssets.plus))
+                    ],
+                  )
                 ],
               ),
             )
           ],
         ),
       ),
-    );
-  }
-
-  Row item_numberGuest() {
-    return Row(
-      children: [
-        InkWell(onTap: () {}, child: Image.asset(AppAssets.minus)),
-        Text('02',
-            style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: Colors.white)),
-        Image.asset(AppAssets.plus)
-      ],
     );
   }
 
@@ -129,8 +212,8 @@ class _itemTicketState extends State<itemTicket> {
                     color: Colors.white))
           ],
         ),
-        Spacer(),
-        Container(child: Image.asset(AppAssets.ngayDi))
+        // Spacer(),
+        // Container(child: Image.asset(AppAssets.ngayDi))
       ],
     );
   }
