@@ -23,7 +23,7 @@ class _itemTicketKhuHoiState extends State<itemTicketKhuHoi> {
           borderRadius: BorderRadius.circular(15), // Đặt bán kính bo tròn ở đây
         ),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        margin: EdgeInsets.only(bottom: 40),
+        margin: EdgeInsets.only(bottom: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

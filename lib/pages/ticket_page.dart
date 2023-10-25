@@ -97,7 +97,7 @@ class _ticketPageState extends State<ticketPage> {
                     color: AppColors.primaryColor,
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  margin: EdgeInsets.only(bottom: 150),
+                  margin: EdgeInsets.only(bottom: 50),
                   height: 60,
                   width: double.infinity,
                   child: Text(
@@ -106,12 +106,26 @@ class _ticketPageState extends State<ticketPage> {
                   ),
                 ),
               ),
-              // ElevatedButton(
-              //   child: Text(
-              //     'Tìm kiếm chuyến bay',
-              //     style: TextStyle(color: Colors.white),
-              //   ),
-              // )
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 70),
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 50),
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        primary: AppColors.textColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30))),
+                    child: Text(
+                      'Tìm kiếm chuyến bay',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ],
