@@ -23,7 +23,7 @@ class _itemTicketState extends State<itemTicket> {
           borderRadius: BorderRadius.circular(15), // Đặt bán kính bo tròn ở đây
         ),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        margin: EdgeInsets.only(bottom: 40),
+        margin: EdgeInsets.only(bottom: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -36,13 +36,23 @@ class _itemTicketState extends State<itemTicket> {
                     Container(child: Image.asset(AppAssets.ngayDi))
                   ],
                 )),
-            itemBookingflight(),
-            Text(
-              'Hàng khách',
-              style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF71AFE5)),
+            Container(
+              margin: EdgeInsets.only(bottom: 12),
+              child: Row(
+                children: [
+                  itemBookingflight(),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              child: Text(
+                'Hàng khách',
+                style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF71AFE5)),
+              ),
             ),
             Container(
               margin: EdgeInsets.only(top: 5),
@@ -212,8 +222,6 @@ class _itemTicketState extends State<itemTicket> {
                     color: Colors.white))
           ],
         ),
-        // Spacer(),
-        // Container(child: Image.asset(AppAssets.ngayDi))
       ],
     );
   }
